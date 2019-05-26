@@ -1,6 +1,6 @@
 # This is the default format. 
 # For more see: http://jekyllrb.com/docs/permalinks/
-permalink: /:categories/:year/:month/:day/:title 
+# permalink: /:categories/:year/:month/:day/:title 
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: pygments
@@ -28,7 +28,10 @@ author :
 production_url : http://username.github.io
 
 gems: ["jekyll-sitemap"]
+gems: ["jekyll-paginate"]
 
+paginate: 5
+paginate_path: "page:num"
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
 JB :
@@ -71,7 +74,7 @@ JB :
   # These paths are to the main pages Jekyll-Bootstrap ships with.
   # Some JB helpers refer to these paths; change them here if needed.
   #
-  archive_path: /archive.html
+  archive_path: /archive
   categories_path : /categories.html
   tags_path : /tags.html
   atom_path : /atom.xml
@@ -133,4 +136,6 @@ JB :
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
-  
+collections:
+  tag:
+    output: true
