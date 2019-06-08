@@ -11,7 +11,9 @@
     unicode-range: U+00-024F;
 }
 * {
-	font-family: custom-sans-serif;
+    font-family: custom-sans-serif;
+    text-align: justify;
+    text-justify:inter-ideograph;
 }
 html, body{
     width: 100%;
@@ -61,9 +63,17 @@ hr{
 .img-box{
     text-align: center;
 }
+.img-box a{
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin: auto;
+    margin-bottom: 30px;
+}
 .img-box img{
     max-width: 100%;
-    margin-bottom: 30px;
 }
 .head ul{
     margin: 0;
@@ -75,9 +85,25 @@ hr{
 }
 .head ul.nav-list li a{
     display: block;
+    color: #fff;
+}
+.head ul.nav-list li.active a{
+    color: #42b983;
+    position: relative;
+}
+.head ul.nav-list li.active a::after{
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 4px;
+    height: 20px;
+    background-color: #42b983;
+    transform: translateY(-50%) rotate(20deg);
 }
 .head ul.nav-list li a:hover{
-    border-right: 3px solid #42b983;
+    /* border-right: 3px solid #42b983; */
+    color: #42b983;
     text-decoration: none;
 }
 .head ul.nav-list li a span{
@@ -93,16 +119,20 @@ hr{
     position: absolute;
     bottom: 10px;
     left: 0;
+    font-size: 12px;
 }
 .head p,.copR{
     color: rgba(255, 255, 255, 0.7);
-    font-size: 14px;
+    /* font-size: 14px; */
     line-height: 1.6rem;
     word-spacing: .8px;
 }
 .head ul.media-list{
+    width: 100%;
     position: absolute;
     bottom: 50px;
+    left: 0;
+    text-align: center;
 }
 .head ul.media-list li{
     display: inline-block;
@@ -162,6 +192,17 @@ hr{
     }
     
 }
+@media screen and (max-width:768px){
+    .head ul.nav-list{
+        text-align: center;
+    }
+    .head ul.nav-list li.active a::after{
+        content: none;
+    }
+    .head p{
+        text-align: center;
+    }
+}
 /* content */
 .content{
     width: calc(100% - 300px);
@@ -178,6 +219,33 @@ hr{
     margin-bottom: 30px;
     border-bottom: 1px solid rgba(255,255,255,.3);
 }
+.pagination .btn-group{
+    text-align: center;
+    font-size: 0
+}
+.pagination .btn-group > *{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-size: 14px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    line-height: 25px;
+    
+}
+.pagination .btn-group .active{
+    background-color: #fff;
+    color: #24313e
+}
+.pagination .btn-group [disabled="disabled"]{
+    color: rgba(255, 255, 255, 0.3);
+    opacity: 0;
+}
+
 .article-status{
     text-align: right;
     float: right;
@@ -186,9 +254,9 @@ hr{
     font-size: 10px;
     color: #fff;
 }
-.article-tags, .article-time{
+/* .article-tags, .article-time{
     padding-bottom: 5px;
-}
+} */
 .article-tags ul, .article-time ul{
     display: inline;
     margin: 0;
@@ -217,6 +285,10 @@ hr{
 }
 .title{
     margin-top: 0;
+}
+.subTitle{
+    margin-top: 25px;
+    margin-bottom: 0;
 }
 .title a span{
     color: #fff;
@@ -256,7 +328,7 @@ hr{
 .archives .year,
 .archives .teb{
     width: 100px;
-    height: 100px;
+    height: 64px;
     float: left;
 }
 .archives .year h3,
@@ -271,6 +343,9 @@ hr{
     border-bottom: 1px solid rgba(255,255,255,.07);
     padding: 10px 0;
 }
+.archives .archives-content:nth-of-type(1){
+    border: none !important;
+}
 .archives .title{
     margin-bottom: 20px;
 }
@@ -278,6 +353,9 @@ hr{
     .archives{
         padding-left: 10px;
         padding-right: 10px;
+    }
+    .archives::after{
+        left: 10px;
     }
     .archives .year h3, .archives .teb h3{
         
@@ -448,4 +526,42 @@ hr{
     width: 100%;
     height: 2px;
     background-color: #42b983;
+}
+
+/* about */
+.jobBox .jobList{
+    padding: 20px 0px 20px 52px;
+    position: relative;
+}
+.jobBox .jobList::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 52px;
+    width: 1px;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.7;
+}
+.jobBox .jobList li:not(.year){
+    margin-left: 13px
+}
+.jobBox .jobList .year{
+    transform: translateX(-100%);
+    display: inline-block;
+    padding-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+.jobBox .jobList .jobTitle{
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.jobBox .jobList .jobTitle small{
+    opacity: 0.7;
+}
+.jobBox .jobList .jobWork{
+    margin-top: 15px;
 }

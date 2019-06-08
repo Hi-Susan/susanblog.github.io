@@ -42,34 +42,24 @@
         <div class="head">
             <nav>
                 <div class="img-box">
-                    <a href="{{ HOME_PATH }}"><img src="Photo/LOGO-Demo.png" alt="" class="logo"></a>
+                    <a href="{{ HOME_PATH }}"><img src="{{ ASSET_PATH }}/images/logo.jpg" alt="" class="logo"></a>
                 </div>
                 <ul class="nav-list">
+                    <li><a href="/">Home</a></li>
                     {% assign pages_list = site.pages %}
                     {% assign group = 'navigation' %}
-                    {% include JB/pages_list %}
+                    {% include JB/pages_nav %}
                 </ul>
                 <p>
-                    前端是無底洞的坑
+                    前端...是無底洞的坑
                 </p>
-                <div class="search">
-                    <a href="javarscript:;">
-                        <span class="fa fa-search"></span>
-                    </a>
-                    <div class="form-search">
-                        <form role="search">
-                            <input type="text" maxlength="10" name="keyword" placeholder="Search">
-                        </form>
-                    </div>
-                </div>
-                <ul class="media-list">
-                    <li><a href=""><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                    <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                </ul>
             </nav>
+            <ul class="media-list">
+                <li><a href="https://www.facebook.com/profile.php?id=100004631977437"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                <li><a href="https://github.com/Hi-Susan"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+            </ul>
             <div class="copR">
-                © 2018 CodeBlog. All rights reserved.
+                © 2019 SusanBlog. All rights reserved.
             </div>
         </div>
         <section class="content">
@@ -86,6 +76,6 @@
     <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <!-- <script src="{{ ASSET_PATH }}/js/bootstrap.min.js"></script> -->
+    <script src="{{ ASSET_PATH }}/js/index.js"></script>
   </body>
 </html>

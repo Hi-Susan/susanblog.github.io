@@ -25,28 +25,60 @@ Usage:
     {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
     {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
     {% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
-  
+
     {% if forloop.first %}
-      <h2>{{this_year}}</h2>
-      <h3>{{this_month}}</h3>
-      <ul>
+    <article class="archives">
+      <div class="year">
+        <h3>{{this_year}}</h3>
+        <!--<span>{{this_month}}</span>-->
+      </div>
     {% endif %}
-  
-    <li><span>{{ post.date | date: "%B %e, %Y" }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  
+    <div class="archives-content">
+      <div class="article-status">
+        <div class="article-time">
+            <i class="fa fa-calendar-o" aria-hidden="true"></i>
+            <ul>
+                <li>{{ post.date | date: "%B %e, %Y" }}</li>
+            </ul>
+        </div>
+        {% unless post.tags == empty %}
+        <div class="article-tags">
+          <i class="fa fa-tag" aria-hidden="true"></i>
+          <ul>
+              {% assign tags_list = post.tags %}
+              {% include JB/tags_list %}
+          </ul>
+        </div>
+        {% endunless %}   
+      </div>
+      <h4 class="title">
+        <a href="{{ BASE_PATH }}{{ post.url }}">
+            <span>
+                {{ post.title }}
+            </span>
+        </a>
+      </h4>
+    </div>
+    <!-- <li><span>{{ post.date | date: "%B %e, %Y" }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>-->
     {% if forloop.last %}
-      </ul>
+      <div class="clear"></div>
+    </article>
     {% else %}
       {% if this_year != next_year %}
-        </ul>
-        <h2>{{next_year}}</h2>
-        <h3>{{next_month}}</h3>
-        <ul>
+        
+        <div class="clear"></div>
+        </article>
+        <article class="archives">
+        <div class="year">
+          <h3>{{next_year}}</h3>
+          <!--<span>{{next_month}}</span>-->
+        </div>
       {% else %}    
         {% if this_month != next_month %}
-          </ul>
-          <h3>{{next_month}}</h3>
-          <ul>
+          <div class="clear"></div>
+          </article>
+          <article class="archives">
+            <!--<span>{{next_month}}</span>-->
         {% endif %}
       {% endif %}
     {% endif %}

@@ -27,26 +27,9 @@ Usage:
     {% if node.title != null %}
       {% if group == null or group == node.group %}
       	{% if page.url == node.url %}
-				<div class="archives-content active">
-					<h4 class="title">
-						<a href="{{ BASE_PATH }}{{node.url}}" class="active">
-								<span>
-										{{node.title}}
-								</span>
-						</a>
-					</h4>
-				</div>
-      
+      	<li class="active"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}}</a></li>
       	{% else %}
-      	<div class="archives-content">
-					<h4 class="title">
-						<a href="{{ BASE_PATH }}{{node.url}}">
-								<span>
-										{{node.title}}
-								</span>
-						</a>
-					</h4>
-				</div>
+      	<li><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></li>
       	{% endif %}
       {% endif %}
     {% endif %}
@@ -54,3 +37,4 @@ Usage:
 {% endif %}
 {% assign pages_list = nil %}
 {% assign group = nil %}
+
