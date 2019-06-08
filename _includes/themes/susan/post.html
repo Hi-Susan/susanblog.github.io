@@ -1,5 +1,6 @@
 <article class="blogpage-content inPage">
-  <h2 class="title">{{ page.title }} {% if page.tagline %}<small>{{page.tagline}}</small>{% endif %}</h2><!-- 標題 END -->
+  <h2 class="title">{{ page.title }}</h2><!-- 標題 END -->
+  {% if page.tagline %}<h3 class="tagline">{{page.tagline}}</h3>{% endif %}
   <div class="article-status">
     <div class="article-time">
       <i class="fa fa-calendar-o" aria-hidden="true"></i>
