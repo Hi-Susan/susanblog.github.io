@@ -1,22 +1,20 @@
 <article class="blogpage-content inPage">
-  <h2 class="title">{{ page.title }}</h2><!-- 標題 END -->
-  {% if page.tagline %}<h3 class="tagline">{{page.tagline}}</h3>{% endif %}
+  <h2 class="title">{{ page.title }}</h2>
   <div class="article-status">
     <div class="article-time">
       <i class="fa fa-calendar-o" aria-hidden="true"></i>
       <ul>
-        <li>{{ page.date | date: "%B %-d, %Y" }}</li>
+        <li>{{ page.date | date: '%B %-d, %Y' }}</li>
       </ul>
     </div>
     {% unless page.tags == empty %}
     <div class="article-tags">
       <i class="fa fa-tag" aria-hidden="true"></i>
       <ul>
-        {% assign tags_list = page.tags %}
-        {% include JB/tags_list %}
+        {% assign tags_list = page.tags %} {% include JB/tags_list %}
       </ul>
     </div>
-    {% endunless %}  
+    {% endunless %}
   </div>
   <div class="article-text">
     {{ content }}
@@ -24,14 +22,22 @@
 </article>
 <div class="article-navigation">
   {% if page.previous %}
-  <span class="prev">上一篇：
-    <a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">{{ page.previous.title }}</a>
+  <span class="prev"
+    >上一篇：
+    <a
+      href="{{ BASE_PATH }}{{ page.previous.url }}"
+      title="{{ page.previous.title }}"
+      >{{ page.previous.title }}</a
+    >
   </span>
-  {% endif %}
-
-  {% if page.next %}
-  <span class="next">下一篇：
-    <a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">{{ page.next.title }}</a>
+  {% endif %} {% if page.next %}
+  <span class="next"
+    >下一篇：
+    <a
+      href="{{ BASE_PATH }}{{ page.next.url }}"
+      title="{{ page.next.title }}"
+      >{{ page.next.title }}</a
+    >
   </span>
   {% endif %}
 </div>
