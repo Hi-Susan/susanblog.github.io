@@ -4,18 +4,15 @@ title: Tags
 header: Posts By Tag
 group: navigation
 ---
-{% include JB/setup %}
 
-{% for tag in site.tags %} 
+{% include JB/setup %} {% for tag in site.tags %}
 <article class="archives">
-  <div class="year">
+  <div class="year tag">
     <h3 id="{{ tag[0] }}-ref">{{ tag[0] }}</h3>
   </div>
 
-  {% assign pages_list = tag[1] %}  
-  {% include JB/pages_list %}
-  
+  {% assign pages_list = tag[1] %} {% include JB/pages_list %}
+
   <div class="clear"></div>
 </article>
 {% endfor %}
-

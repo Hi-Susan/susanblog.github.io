@@ -19,6 +19,12 @@
     />
 
     <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css"
+    />
+    <link href="{{ ASSET_PATH }}/css/atom-one-dark.css" rel="stylesheet" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+    <link
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
       rel="stylesheet"
     />
@@ -114,7 +120,9 @@
             %} {% include JB/pages_nav %}
           </ul>
           <p>
-            前端...是無底洞的坑
+            前端...是無底洞的坑 <br />
+            設計師轉職成為前端工程師的學習分享筆記<br />
+            Front-End Developer work in Taipei
           </p>
         </nav>
         <ul class="media-list">
@@ -127,6 +135,16 @@
             <a href="https://github.com/Hi-Susan"
               ><i class="fa fa-github" aria-hidden="true"></i
             ></a>
+          </li>
+          <li>
+            <a href="https://twitter.com/ShuShu_Shan">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://medium.com/susan-blog">
+              <i class="fa fa-medium" aria-hidden="true"></i>
+            </a>
           </li>
         </ul>
         <div class="copR">
@@ -142,11 +160,15 @@
     </div>
 
     {% include JB/analytics %}
-
+    <script>
+      hljs.initHighlightingOnLoad()
+    </script>
     <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="{{ ASSET_PATH }}/js/ga-api.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/9.1.0/markdown-it.js"></script>
+
+    <!-- <script src="{{ ASSET_PATH }}/js/ga-api.js"></script> -->
     <script src="{{ ASSET_PATH }}/js/index.js"></script>
   </body>
 </html>

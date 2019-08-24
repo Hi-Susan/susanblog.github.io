@@ -9,7 +9,7 @@
 在該專案的資料夾內部建立 npm 專案
 
 ```
-npm init -f
+> npm init -f
 ```
 
 資料夾內會多出`package.json`的檔案
@@ -17,7 +17,7 @@ npm init -f
 ### 安裝 webpack
 
 ```
-npm install webpack webpack-cli --save-dev
+> npm install webpack webpack-cli --save-dev
 ```
 
 ### 設定 webpack
@@ -169,12 +169,20 @@ import '../css/styke.css'
 題外話：
 第一次練習的時候，很多網站推薦使用 `extract-text-webpack-plugin`
 使用後卻會跳出 npm ERR!
-經查詢後發現
+經查詢後發現 webpack4
 `extract-text-webpack-plugin` 已被棄用!!
 `extract-text-webpack-plugin` 已被棄用!!
 `extract-text-webpack-plugin` 已被棄用!!
 
 ![extract-text-webpack-plugin](/assets/themes/susan/images/webpack_test_03.jpg)
+
+### 安裝 extract-text-webpack-plugin
+
+`npm install extract-text-webpack-plugin --save-dev`
+
+### 使用 extract-text-webpack-plugin
+
+`npm install optimize-css-assets-webpack-plugin --save-dev`
 
 ## SASS/SCSS
 
@@ -195,6 +203,9 @@ npm install sass-loader node-sass extract-text-webpack-plugin --save-dev
 ---
 
 [Webpack 教學 (一) ：什麼是 Webpack? 能吃嗎？](https://medium.com/@Mike_Cheng1208/%E4%BB%80%E9%BA%BC%E6%98%AFwebpack-%E4%BD%A0%E9%9C%80%E8%A6%81webpack%E5%97%8E-2d8f9658241d)
+
 [Webpack 教學 (二) ：檔案你要去哪裡？](https://medium.com/@Mike_Cheng1208/webpack%E6%95%99%E5%AD%B8-%E4%BA%8C-%E6%AA%94%E6%A1%88%E4%BD%A0%E8%A6%81%E5%8E%BB%E5%93%AA%E8%A3%A1-13bdada9e543)
+
 [使用 webpack.config.js 來設定 webpack !](https://ithelp.ithome.com.tw/articles/10193343)
+
 [Webpack 實作入門 2：打包 CSS / SCSS 與 加入 Bootstrap](http://www.mrmu.com.tw/2017/08/18/webpack-tutorial2-css-scss/)
