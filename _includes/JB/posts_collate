@@ -65,21 +65,12 @@ Usage:
     </article>
     {% else %}
       {% if this_year != next_year %}
-        
         <div class="clear"></div>
         </article>
         <article class="archives">
         <div class="year">
           <h3>{{next_year}}</h3>
-          <!--<span>{{next_month}}</span>-->
         </div>
-      {% else %}    
-        {% if this_month != next_month %}
-          <div class="clear"></div>
-          </article>
-          <article class="archives">
-            <!--<span>{{next_month}}</span>-->
-        {% endif %}
       {% endif %}
     {% endif %}
   {% endfor %}

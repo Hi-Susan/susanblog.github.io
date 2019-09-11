@@ -422,7 +422,7 @@ hr {
 .archives .tag h3 {
   font-size: 20px;
 }
-.archives .tag + .archives-content {
+.archives .tag ~ .archives-content {
   width: calc(100% - 150px);
 }
 .archives .archives-content {
