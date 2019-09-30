@@ -13,29 +13,18 @@
     <!-- Enable responsive viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="upgrade-insecure-requests"
-    />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
-    <link
+    <!-- <link
       rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/default.min.css"
-    />
-    <link href="{{ ASSET_PATH }}/css/atom-one-dark.css" rel="stylesheet" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
-      rel="stylesheet"
-    />
+    /> -->
+    <!-- <link href="{{ ASSET_PATH }}/css/atom-one-dark.css" rel="stylesheet" /> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script> -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" />
     <link href="{{ ASSET_PATH }}/css/font-awesome.min.css" rel="stylesheet" />
     <link href="{{ ASSET_PATH }}/css/Normalize.css" rel="stylesheet" />
-    <link
-      href="{{ ASSET_PATH }}/css/style.css"
-      rel="stylesheet"
-      type="text/css"
-      media="all"
-    />
+    <link href="{{ ASSET_PATH }}/css/style.css" rel="stylesheet" type="text/css" media="all" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -52,17 +41,14 @@
       <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
     -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-141766114-1"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141766114-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || []
+      window.dataLayer = window.dataLayer || [];
       function gtag() {
-        dataLayer.push(arguments)
+        dataLayer.push(arguments);
       }
-      gtag('js', new Date())
-      gtag('config', 'UA-141766114-1')
+      gtag('js', new Date());
+      gtag('config', 'UA-141766114-1');
     </script>
 
     <!-- atom & rss feed -->
@@ -81,16 +67,16 @@
 
     <!-- Google Tag Manager -->
     <script>
-      ;(function(w, d, s, l, i) {
-        w[l] = w[l] || []
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
         var f = d.getElementsByTagName(s)[0],
           j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : ''
-        j.async = true
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
-        f.parentNode.insertBefore(j, f)
-      })(window, document, 'script', 'dataLayer', 'GTM-M4MTKXH')
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-M4MTKXH');
     </script>
     <!-- End Google Tag Manager -->
   </head>
@@ -116,11 +102,11 @@
           </div>
           <ul class="nav-list">
             <li><a href="/">Home</a></li>
-            {% assign pages_list = site.pages %} {% assign group = 'navigation'
-            %} {% include JB/pages_nav %}
+            {% assign pages_list = site.pages %} {% assign group = 'navigation' %} {% include
+            JB/pages_nav %}
           </ul>
           <p>
-            前端...是無底洞的坑 <br />
+            「前端...是無底洞的坑。」 <br />
             設計師轉職成為前端工程師的學習分享筆記<br />
             Front-End Developer work in Taipei
           </p>
@@ -160,9 +146,9 @@
     </div>
 
     {% include JB/analytics %}
-    <script>
-      hljs.initHighlightingOnLoad()
-    </script>
+    <!-- <script>
+      hljs.initHighlightingOnLoad();
+    </script> -->
     <!-- Latest compiled and minified JavaScript, requires jQuery 1.x (2.x not supported in IE8) -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
