@@ -810,3 +810,83 @@ hr {
 .jobBox .jobList .jobWork {
   margin-top: 15px;
 }
+
+.flex-content{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+.col-3{
+  width: 33.3%;
+  flex: 0 0 33.3%;
+}
+.col-3 a:hover{
+  text-decoration: none;
+}
+a:hover .card-image{
+  transform: translateY(-30%);
+  opacity: 0.7;
+}
+a:hover .card{
+  box-shadow: 0px 7px 27px -8px #525b63;
+}
+a:hover .card-info{
+  transform: translateY(-180%);
+}
+a:hover .card-info .title{
+  color: #0d2e4c;
+}
+a:hover .card-info .text{
+  color: #0d2e4c;
+  opacity: 1;
+  height: auto;
+}
+.card{
+  margin: 10px;
+  width: calc(100% - 20px);
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0px 2px 6px 0px #525b63;
+  transition: all 0.3s ease-in-out;
+}
+.card-image{
+  height: 0;
+  padding-top: 70%;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.4s ease-in-out;
+}
+.card-info{
+  padding: 10px;
+  color: #000;
+  transition: all 0.4s ease-in-out;
+  background-color: #fff;
+  height: 50px;
+  box-sizing: border-box;
+}
+.card-info .title{
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: #2e2e2e;
+  transition: all 0.4s ease-in-out;
+}
+
+.card-info .text{
+  font-size: 14px;
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+  height: 0;
+}
+@media screen and (max-width: 900px){
+  .col-3{
+    width: 50%;
+    flex: 0 0 50%;
+  }
+}
+@media screen and (max-width: 450px){
+  .col-3{
+    width: 100%;
+    flex: 0 0 100%;
+  }
+}
